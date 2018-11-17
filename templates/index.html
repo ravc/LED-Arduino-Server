@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset=utf-8>
+    <meta name=viewport content=width=device-width,initial-scale=1>
+    <title>Arduino LED</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    function changeColor(color) {
+        $.ajax({
+            url: '/changecolor/'+color.id,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8'
+        });
+    }
+    </script>
+  </head>
+  
+    On\Off<br><label class="switch">
+        <input type="checkbox" name=color onchange="changeColor(this)" id="O" {{ power }}>
+        <span class="slider round"></span>
+    </label><br><br>
+    Red<br><label class="switch">
+        <input type="checkbox" name=color onchange="changeColor(this)" id="R" {{ red }}>
+        <span class="slider round"></span>
+    </label><br><br>
+    Blue<br><label class="switch">
+        <input type="checkbox" name=color onchange="changeColor(this)" id="G" {{ green }}>
+        <span class="slider round"></span>
+    </label><br><br>
+    Green<br><label class="switch">
+        <input type="checkbox" name=color onchange="changeColor(this)" id="B" {{ blule }}>
+        <span class="slider round"></span>
+    </label><br><br>
+</html>
+
